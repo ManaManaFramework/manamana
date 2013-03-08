@@ -1,3 +1,3 @@
-module Manamana
+module ManaMana
   VERSION = "0.0.1"
 end

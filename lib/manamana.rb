@@ -1,5 +1,5 @@
 require "manamana/version"
 
-module Manamana
+module ManaMana
   # Your code goes here...
 end

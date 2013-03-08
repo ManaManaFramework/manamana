@@ -13,5 +13,5 @@ Gem::Specification.new do |gem|
   gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
   gem.name          = "manamana"
   gem.require_paths = ["lib"]
-  gem.version       = Manamana::VERSION
+  gem.version       = ManaMana::VERSION
 end
