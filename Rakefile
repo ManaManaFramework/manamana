@@ -4,7 +4,10 @@ require 'rake/testtask'
  
 Rake::TestTask.new do |t|
   t.libs << 'lib/manamana'
-  t.test_files = FileList['test/lib/manamana/*_test.rb']
+  t.test_files = FileList[
+                           'test/lib/manamana/*_test.rb',
+                           'test/lib/rsyntax/*_test.rb'
+                         ]
   t.verbose = true
 end
  
