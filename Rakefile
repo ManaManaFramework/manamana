@@ -8,7 +8,7 @@ Rake::TestTask.new do |t|
                            'test/lib/manamana/*_test.rb',
                            'test/lib/rsyntax/*_test.rb'
                          ]
-  t.verbose = true
+  t.verbose = false
 end
  
 task :default => :test
