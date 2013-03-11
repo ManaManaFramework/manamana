@@ -6,4 +6,8 @@ gemspec
 group :development do
   gem "minitest"
   gem "minitest-colorize", :git => 'git://github.com/sobrinho/minitest-colorize.git', :branch => 'master'
+  gem 'rb-fsevent', '~> 0.9'
+  gem "guard"
+  gem "guard-rake"
+  gem "guard-minitest"
 end
