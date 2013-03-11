@@ -1,0 +1,53 @@
+GIT
+  remote: git://github.com/sobrinho/minitest-colorize.git
+  revision: c75efb2064453bab38329a3f89487c9dbeb2887d
+  branch: master
+  specs:
+    minitest-colorize (0.0.5)
+      minitest (>= 2.0)
+
+PATH
+  remote: .
+  specs:
+    manamana (0.0.1)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    coderay (1.0.9)
+    guard (1.6.2)
+      listen (>= 0.6.0)
+      lumberjack (>= 1.0.2)
+      pry (>= 0.9.10)
+      terminal-table (>= 1.4.3)
+      thor (>= 0.14.6)
+    guard-minitest (0.5.0)
+      guard (>= 0.4)
+    guard-rake (0.0.7)
+      guard
+      rake
+    listen (0.7.3)
+    lumberjack (1.0.2)
+    method_source (0.8.1)
+    minitest (4.6.2)
+    pry (0.9.12)
+      coderay (~> 1.0.5)
+      method_source (~> 0.8)
+      slop (~> 3.4)
+    rake (10.0.3)
+    rb-fsevent (0.9.3)
+    slop (3.4.3)
+    terminal-table (1.4.5)
+    thor (0.17.0)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  guard
+  guard-minitest
+  guard-rake
+  manamana!
+  minitest
+  minitest-colorize!
+  rb-fsevent (~> 0.9)
