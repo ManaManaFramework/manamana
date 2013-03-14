@@ -1,2 +1,3 @@
 require "manamana/version"
-require "manamana/rdsl/lexer"
+require "manamana/rdsl/parser"
+require "manamana/tdsl/parser"
