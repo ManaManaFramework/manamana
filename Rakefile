@@ -27,3 +27,18 @@ namespace :rdsl do
   end
 
 end
+
+
+namespace :tdsl do
+
+  desc "Compiles the Test Case DSL lexer"
+  task :compile_lexer do |t|
+    `ragel -R src/tdsl/lexer.rl -o lib/manamana/tdsl/lexer.rb`
+  end
+
+  desc "Compiles the Test Case DSL parser"
+  task :compile_parser do |t|
+    `racc src/tdsl/parser.y -o lib/manamana/tdsl/parser.rb`
+  end
+
+end
