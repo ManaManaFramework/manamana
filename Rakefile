@@ -12,3 +12,13 @@ Rake::TestTask.new do |t|
 end
  
 task :default => :test
+
+
+namespace :rdsl do
+
+  desc "Compiles the Requirements DSL lexer"
+  task :compile_lexer do |t|
+    `ragel -R src/rdsl/lexer.rl -o lib/manamana/rdsl/lexer.rb`
+  end
+
+end

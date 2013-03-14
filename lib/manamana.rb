@@ -1,2 +1,2 @@
 require "manamana/version"
-require "rsyntax/lexer"
+require "manamana/rdsl/lexer"
