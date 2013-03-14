@@ -36,6 +36,7 @@ GEM
       slop (~> 3.4)
     rake (10.0.3)
     rb-fsevent (0.9.3)
+    ruby_gntp (0.3.4)
     slop (3.4.3)
     terminal-table (1.4.5)
     thor (0.17.0)
@@ -51,3 +52,4 @@ DEPENDENCIES
   minitest
   minitest-colorize!
   rb-fsevent (~> 0.9)
+  ruby_gntp
