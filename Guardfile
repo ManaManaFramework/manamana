@@ -2,6 +2,8 @@
 
 guard 'minitest' do
   watch(%r|^lib/manamana\.rb|)                { "test" }
+  watch(%r|^lib/manamana/rdsl/nodes\.rb|)     { "test/lib/manamana/rdsl/requirements_node_test.rb" }
+  watch(%r|^lib/manamana/tdsl/nodes\.rb|)     { "test/lib/manamana/tdsl/test_case_node_test.rb" }
   watch(%r|^lib/(.*)/(.*)\.rb|)               { |m| "test/lib/#{m[1]}/#{m[2]}_test.rb" }
 
   watch(%r|^test/test_helper\.rb|)            { "test" }
