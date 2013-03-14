@@ -11,3 +11,7 @@ end
 guard 'rake', :task => 'rdsl:compile_lexer' do
   watch %r{^src/rdsl/lexer\.rl$}
 end
+
+guard 'rake', :task => 'rdsl:compile_parser' do
+  watch %r{^src/rdsl/parser\.y$}
+end

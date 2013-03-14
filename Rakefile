@@ -21,4 +21,9 @@ namespace :rdsl do
     `ragel -R src/rdsl/lexer.rl -o lib/manamana/rdsl/lexer.rb`
   end
 
+  desc "Compiles the Requirements DSL parser"
+  task :compile_parser do |t|
+    `racc src/rdsl/parser.y -o lib/manamana/rdsl/parser.rb`
+  end
+
 end

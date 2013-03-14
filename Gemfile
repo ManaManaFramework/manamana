@@ -11,4 +11,5 @@ group :development do
   gem "guard-rake"
   gem "guard-minitest"
   gem 'ruby_gntp'
+  gem "racc"
 end

@@ -10,6 +10,7 @@ PATH
   remote: .
   specs:
     manamana (0.0.1)
+      racc (= 1.4.9)
 
 GEM
   remote: https://rubygems.org/
@@ -34,6 +35,7 @@ GEM
       coderay (~> 1.0.5)
       method_source (~> 0.8)
       slop (~> 3.4)
+    racc (1.4.9)
     rake (10.0.3)
     rb-fsevent (0.9.3)
     ruby_gntp (0.3.4)
@@ -51,5 +53,6 @@ DEPENDENCIES
   manamana!
   minitest
   minitest-colorize!
+  racc
   rb-fsevent (~> 0.9)
   ruby_gntp

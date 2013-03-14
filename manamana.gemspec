@@ -14,4 +14,6 @@ Gem::Specification.new do |gem|
   gem.name          = "manamana"
   gem.require_paths = ["lib"]
   gem.version       = ManaMana::VERSION
+  
+  gem.add_dependency 'racc', '1.4.9'
 end
