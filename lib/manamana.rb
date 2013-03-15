@@ -1,3 +1,6 @@
-require "manamana/version"
-require "manamana/rdsl/parser"
-require "manamana/tdsl/parser"
+require 'manamana/version'
+require 'manamana/rdsl/parser'
+require 'manamana/tdsl/parser'
+require 'manamana/steps'
+require 'manamana/compiler'
+require 'manamana/runner'
