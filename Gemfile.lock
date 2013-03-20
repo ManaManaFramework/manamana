@@ -9,7 +9,7 @@ GIT
 PATH
   remote: .
   specs:
-    manamana (0.0.2)
+    manamana (0.0.3)
       racc (= 1.4.9)
 
 GEM
