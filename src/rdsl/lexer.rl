@@ -43,7 +43,7 @@ module ManaMana
 
       def emit_group_name(token_array, data, ts, te)
         value = data[ts...te].pack("c*").split(/=+/)[0].strip
-        token_array << [:GROUP, value]
+        token_array << [:GROUP, { value: value, offset: ts }]
       end
 
       def emit_row(data, target_array, ts, te)
@@ -52,7 +52,7 @@ module ManaMana
         # ignore borders
         return if /^\-+/ =~ cells
 
-        target_array << [:ROW, 'Row']
+        target_array << [:ROW, { offset: ts }]
         cells.split('|').each do |cell|
           target_array << [:CELL, cell.strip]
         end
@@ -60,12 +60,12 @@ module ManaMana
 
       def emit_requirement(token_array, data, ts, te)
         value = data[ts...te].pack("c*").gsub(/^\* /, '').split.join(' ')
-        token_array << [:REQUIREMENT, value]
+        token_array << [:REQUIREMENT, { value: value, offset: ts }]
       end
 
       def emit_text(token_array, data, ts, te)
           value = data[ts...te].pack("c*").strip.split.join(' ')
-        token_array << [:TEXT, value]
+        token_array << [:TEXT, { value: value, offset: ts }]
       end
 
       def tokenize(data)

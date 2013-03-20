@@ -157,70 +157,70 @@ module_eval(<<'.,.,', 'parser.y', 11)
 
 module_eval(<<'.,.,', 'parser.y', 15)
   def _reduce_3(val, _values, result)
-     result = [ GroupNode.new(val[0]) ] 
+     result = [ GroupNode.new(val[0][:value]) ] 
     result
   end
 .,.,
 
 module_eval(<<'.,.,', 'parser.y', 16)
   def _reduce_4(val, _values, result)
-     result = [ GroupNode.new(val[0]) ] 
+     result = [ GroupNode.new(val[0][:value]) ] 
     result
   end
 .,.,
 
 module_eval(<<'.,.,', 'parser.y', 17)
   def _reduce_5(val, _values, result)
-     result = [ GroupNode.new(val[0]) ] + val[1] 
+     result = [ GroupNode.new(val[0][:value]) ] + val[1] 
     result
   end
 .,.,
 
 module_eval(<<'.,.,', 'parser.y', 18)
   def _reduce_6(val, _values, result)
-     result = [ GroupNode.new(val[0], val[1]) ] 
+     result = [ GroupNode.new(val[0][:value], val[1]) ] 
     result
   end
 .,.,
 
 module_eval(<<'.,.,', 'parser.y', 19)
   def _reduce_7(val, _values, result)
-     result = [ GroupNode.new(val[0], val[2]) ] 
+     result = [ GroupNode.new(val[0][:value], val[2]) ] 
     result
   end
 .,.,
 
 module_eval(<<'.,.,', 'parser.y', 20)
   def _reduce_8(val, _values, result)
-     result = [ GroupNode.new(val[0], val[1]) ] + val[2] 
+     result = [ GroupNode.new(val[0][:value], val[1]) ] + val[2] 
     result
   end
 .,.,
 
 module_eval(<<'.,.,', 'parser.y', 24)
   def _reduce_9(val, _values, result)
-     result = [ RequirementNode.new(val[0]) ] 
+     result = [ RequirementNode.new(val[0][:value]) ] 
     result
   end
 .,.,
 
 module_eval(<<'.,.,', 'parser.y', 25)
   def _reduce_10(val, _values, result)
-     result = [ RequirementNode.new(val[0]) ] + val[1] 
+     result = [ RequirementNode.new(val[0][:value]) ] + val[1] 
     result
   end
 .,.,
 
 module_eval(<<'.,.,', 'parser.y', 26)
   def _reduce_11(val, _values, result)
-     result = [ RequirementNode.new(val[0], val[1]) ] 
+     result = [ RequirementNode.new(val[0][:value], val[1]) ] 
     result
   end
 .,.,
 
 module_eval(<<'.,.,', 'parser.y', 27)
   def _reduce_12(val, _values, result)
-     result = [ RequirementNode.new(val[0], val[1]) ] + val[2] 
+     result = [ RequirementNode.new(val[0][:value], val[1]) ] + val[2] 
     result
   end
 .,.,

@@ -23,12 +23,12 @@ module ManaMana
                 ])
         output.must_equal nodes
       end
-
+      
       it "must parse multiple empty groups" do
         output = parse <<-EOF
                  Create a Project
                  ================
-
+      
                  Create a User
                  =============
                  EOF
@@ -38,12 +38,12 @@ module ManaMana
                 ])
         output.must_equal nodes
       end
-
+      
       it "must parse requirements" do
         output = parse <<-EOF
                  Create a Project
                  ================
-
+      
                    * Given a user with role <Role>
                EOF
         nodes = RootNode.new('', [
@@ -53,12 +53,12 @@ module ManaMana
                 ])
         output.must_equal nodes
       end
-
+      
       it "must parse a multi-line requirement" do
         output = parse <<-EOF
                  Create a Project
                  ================
-
+      
                    * Given a
                      user with
                      role <Role>
@@ -70,17 +70,17 @@ module ManaMana
                 ])
         output.must_equal nodes
       end
-
+      
       it "must parse multiple non-empty groups" do
         output = parse <<-EOF
                  Create a Project
                  ================
-
+      
                    * Projects without names are invalid
-
+      
                  Create a User
                  =============
-
+      
                    * Users with names are valid
                  EOF
         nodes = RootNode.new('', [
@@ -93,16 +93,16 @@ module ManaMana
                 ])
         output.must_equal nodes
       end
-
+      
       it "must parse tables" do
         output = parse <<-EOF
                  Create a Project
                  ================
-
+      
                  * Given a
                    user with
                    role <Role>
-
+      
                    Examples:
                     | Role | Remarks |
                     | PM   | ARRR    |
@@ -121,19 +121,19 @@ module ManaMana
                 ])
         output.must_equal nodes
       end
-
+      
       it "must parse multiple requirements" do
         output = parse <<-EOF
                  Project Management
                  ==================
-
+      
                  * A <Role> in the system <Can or Cannot Create> projects
-
+      
                      | Role | Can or Cannot Create |
                      |------|----------------------|
                      | PM   | Can Create           |
                      | User | Cannot Create        |
-
+      
                  * An empty project is invalid
                EOF
         nodes = RootNode.new('', [
@@ -150,22 +150,22 @@ module ManaMana
                 ])
         output.must_equal nodes
       end
-
+      
       it "must parse groups followed by arbitrary text" do
         output = parse <<-EOF
                    User Login
                    ==========
-
+      
                    (Derived from: http://www.allaboutagile.com/user-story-example/)
-
+      
                    As a registered user, I want to log in,
                    so I can access subscriber content.
-
+      
                    Success:
-
+      
                      * When I check 'Remember Me' and log in succesfully,
                        I won't have to login again next time
-
+      
                      * When I uncheck 'Remember Me' and log in successfully,
                        I should be asked to login next time
                  EOF

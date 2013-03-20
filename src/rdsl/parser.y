@@ -13,19 +13,19 @@ class ManaMana::RDSL::Parser
     ;
 
     Groups:
-      GROUP                       { result = [ GroupNode.new(val[0]) ] }
-    | GROUP Text                  { result = [ GroupNode.new(val[0]) ] }
-    | GROUP Groups                { result = [ GroupNode.new(val[0]) ] + val[1] }
-    | GROUP Requirements          { result = [ GroupNode.new(val[0], val[1]) ] }
-    | GROUP Text Requirements     { result = [ GroupNode.new(val[0], val[2]) ] }
-    | GROUP Requirements Groups   { result = [ GroupNode.new(val[0], val[1]) ] + val[2] }
+      GROUP                       { result = [ GroupNode.new(val[0][:value]) ] }
+    | GROUP Text                  { result = [ GroupNode.new(val[0][:value]) ] }
+    | GROUP Groups                { result = [ GroupNode.new(val[0][:value]) ] + val[1] }
+    | GROUP Requirements          { result = [ GroupNode.new(val[0][:value], val[1]) ] }
+    | GROUP Text Requirements     { result = [ GroupNode.new(val[0][:value], val[2]) ] }
+    | GROUP Requirements Groups   { result = [ GroupNode.new(val[0][:value], val[1]) ] + val[2] }
     ;
 
     Requirements:
-      REQUIREMENT                              { result = [ RequirementNode.new(val[0]) ] }
-    | REQUIREMENT Requirements                 { result = [ RequirementNode.new(val[0]) ] + val[1] }
-    | REQUIREMENT RequirementBody              { result = [ RequirementNode.new(val[0], val[1]) ] }
-    | REQUIREMENT RequirementBody Requirements { result = [ RequirementNode.new(val[0], val[1]) ] + val[2] }
+      REQUIREMENT                              { result = [ RequirementNode.new(val[0][:value]) ] }
+    | REQUIREMENT Requirements                 { result = [ RequirementNode.new(val[0][:value]) ] + val[1] }
+    | REQUIREMENT RequirementBody              { result = [ RequirementNode.new(val[0][:value], val[1]) ] }
+    | REQUIREMENT RequirementBody Requirements { result = [ RequirementNode.new(val[0][:value], val[1]) ] + val[2] }
     ;
 
     RequirementBody:
