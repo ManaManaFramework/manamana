@@ -290,14 +290,14 @@ module_eval(<<'.,.,', 'parser.y', 48)
 
 module_eval(<<'.,.,', 'parser.y', 52)
   def _reduce_22(val, _values, result)
-     result = [ val[0] ] 
+     result = [ val[0][:value] ] 
     result
   end
 .,.,
 
 module_eval(<<'.,.,', 'parser.y', 53)
   def _reduce_23(val, _values, result)
-     result = [ val[0] ] + val[1] 
+     result = [ val[0][:value] ] + val[1] 
     result
   end
 .,.,

@@ -50,8 +50,8 @@ class ManaMana::RDSL::Parser
     ;
 
     Cells:
-      CELL                        { result = [ val[0] ] }
-    | CELL Cells                  { result = [ val[0] ] + val[1] }
+      CELL                        { result = [ val[0][:value] ] }
+    | CELL Cells                  { result = [ val[0][:value] ] + val[1] }
     ;
 
 end

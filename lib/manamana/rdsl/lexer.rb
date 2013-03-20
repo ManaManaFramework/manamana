@@ -216,7 +216,7 @@ self.lexer_en_main = 21;
 
         target_array << [:ROW, { offset: ts }]
         cells.split('|').each do |cell|
-          target_array << [:CELL, cell.strip]
+          target_array << [:CELL, { value: cell.strip }]
         end
       end
 

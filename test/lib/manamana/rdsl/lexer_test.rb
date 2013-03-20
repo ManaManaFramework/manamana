@@ -82,9 +82,9 @@ module ManaMana
                   | Project B | Second Project    |
                 EOF
         tokens = [
-                   [:ROW, { offset:  18 }], [:CELL, 'Name'],      [:CELL, 'Description'],
-                   [:ROW, { offset:  70 }], [:CELL, 'Project A'], [:CELL, 'First Project'],
-                   [:ROW, { offset: 122 }], [:CELL, 'Project B'], [:CELL, 'Second Project']
+                   [:ROW, { offset:  18 }], [:CELL, { value: 'Name' }],      [:CELL, { value: 'Description' }],
+                   [:ROW, { offset:  70 }], [:CELL, { value: 'Project A' }], [:CELL, { value: 'First Project' }],
+                   [:ROW, { offset: 122 }], [:CELL, { value: 'Project B' }], [:CELL, { value: 'Second Project' }]
                  ]
         output.must_equal tokens
       end
@@ -97,9 +97,9 @@ module ManaMana
                   | Project B | Second Project    |
                 EOF
         tokens = [
-                   [:ROW, { offset:  18 }], [:CELL, 'Name'],      [:CELL, 'Description'],
-                   [:ROW, { offset: 122 }], [:CELL, 'Project A'], [:CELL, 'First Project'],
-                   [:ROW, { offset: 174 }], [:CELL, 'Project B'], [:CELL, 'Second Project']
+                   [:ROW, { offset:  18 }], [:CELL, { value: 'Name' }],      [:CELL, { value: 'Description' }],
+                   [:ROW, { offset: 122 }], [:CELL, { value: 'Project A' }], [:CELL, { value: 'First Project' }],
+                   [:ROW, { offset: 174 }], [:CELL, { value: 'Project B' }], [:CELL, { value: 'Second Project' }]
                  ]
         output.must_equal tokens
       end
@@ -134,9 +134,9 @@ module ManaMana
                    [:GROUP, { value: 'Create a Project', offset: 15 }],
                    [:REQUIREMENT, { value: 'Given a user has a role of <Role> in the system Then he <Can or Cannot Create> projects', offset: 86 }],
                    [:TEXT, { value: 'Examples:', offset: 217 }],
-                   [:ROW, { offset: 246 }], [:CELL, 'Role'], [:CELL, 'Can or Cannot Create'],
-                   [:ROW, { offset: 298 }], [:CELL, 'Admin'], [:CELL, 'Can Create'],
-                   [:ROW, { offset: 350 }], [:CELL, 'User'], [:CELL, 'Cannot Create'],
+                   [:ROW, { offset: 246 }], [:CELL, { value: 'Role'  }], [:CELL, { value: 'Can or Cannot Create' }],
+                   [:ROW, { offset: 298 }], [:CELL, { value: 'Admin' }], [:CELL, { value: 'Can Create' }],
+                   [:ROW, { offset: 350 }], [:CELL, { value: 'User'  }], [:CELL, { value: 'Cannot Create' }],
                    [:TEXT, { value: 'Notes: The quick brown fox jumps over the lazy dog. The quick brown fox jumps.', offset: 407 }]
                  ]
         output.must_equal tokens
