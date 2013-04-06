@@ -119,7 +119,8 @@ Run `mana start` to execute the tests and validate the requirements:
 ```
 $ mana start
 Run options: --seed 51346
-# Running tests:
+
+## Running tests
 
 Create Tickets
 ==============
@@ -147,4 +148,30 @@ So that I can track the bugs in our project
 Finished tests in 0.004842s, 1445.6836 tests/s, 826.1049 assertions/s.
 
 7 tests, 4 assertions, 0 failures, 0 errors, 0 skips
+```
+
+## Development guide
+If you want to help in developing ManaMana, fork this project at [https://github.com/ManaManaFramework/manamana](https://github.com/ManaManaFramework/manamana), then clone it locally. A few requirements before proceeding:
+
+* RVM
+* Homebrew on Mac OS X
+* git
+* growl on Mac OS X
+
+Once the above have been installed, go to the manamana project directory and install the required gems:
+
+```
+bundle install
+```
+
+Afterwards, install ragel. For Mac OS X, use Homebrew:
+
+```
+brew install ragel
+```
+
+Now you can start developing! Open the project folder with your favorit text editor, then, on your terminal window, run guard from the project directory:
+
+```
+guard
 ```
