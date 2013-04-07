@@ -61,6 +61,7 @@ DEPENDENCIES
   manamana!
   minitest
   minitest-colorize!
+  pry
   racc
   rb-fsevent (~> 0.9)
   ruby_gntp

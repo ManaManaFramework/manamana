@@ -13,4 +13,5 @@ group :development do
   gem 'ruby_gntp'
   gem "racc"
   gem "debugger"
+  gem "pry"
 end
