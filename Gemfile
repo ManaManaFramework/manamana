@@ -12,4 +12,5 @@ group :development do
   gem "guard-minitest"
   gem 'ruby_gntp'
   gem "racc"
+  gem "debugger"
 end
