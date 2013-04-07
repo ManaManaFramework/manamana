@@ -18,8 +18,8 @@ module ManaMana
                  Create a Project
                  ================
                  EOF
-        nodes = RootNode.new('', [
-                  GroupNode.new('Create a Project')
+        nodes = RootNode.new({}, [
+                  GroupNode.new({ value: 'Create a Project', offset: 17 })
                 ])
         output.must_equal nodes
       end
@@ -32,9 +32,9 @@ module ManaMana
                  Create a User
                  =============
                  EOF
-        nodes = RootNode.new('', [
-                  GroupNode.new('Create a Project'),
-                  GroupNode.new('Create a User')
+        nodes = RootNode.new({}, [
+                  GroupNode.new({ value: 'Create a Project', offset: 17 }),
+                  GroupNode.new({ value: 'Create a User', offset: 92 })
                 ])
         output.must_equal nodes
       end
@@ -46,9 +46,9 @@ module ManaMana
       
                    * Given a user with role <Role>
                EOF
-        nodes = RootNode.new('', [
-                  GroupNode.new('Create a Project', [
-                    RequirementNode.new('Given a user with role <Role>')
+        nodes = RootNode.new({}, [
+                  GroupNode.new({ value: 'Create a Project', offset: 17 }, [
+                    RequirementNode.new({ value: 'Given a user with role <Role>', offset: 94 })
                   ])
                 ])
         output.must_equal nodes
@@ -63,9 +63,9 @@ module ManaMana
                      user with
                      role <Role>
                EOF
-        nodes = RootNode.new('', [
-                  GroupNode.new('Create a Project', [
-                    RequirementNode.new("Given a user with role <Role>")
+        nodes = RootNode.new({}, [
+                  GroupNode.new({ value: 'Create a Project', offset: 17 }, [
+                    RequirementNode.new({ value: "Given a user with role <Role>", offset: 94 })
                   ])
                 ])
         output.must_equal nodes
@@ -83,12 +83,12 @@ module ManaMana
       
                    * Users with names are valid
                  EOF
-        nodes = RootNode.new('', [
-                  GroupNode.new('Create a Project', [
-                    RequirementNode.new('Projects without names are invalid')
+        nodes = RootNode.new({}, [
+                  GroupNode.new({ value: 'Create a Project', offset: 17 }, [
+                    RequirementNode.new({ value: 'Projects without names are invalid', offset: 94 })
                   ]),
-                  GroupNode.new('Create a User', [
-                    RequirementNode.new('Users with names are valid')
+                  GroupNode.new({ value: 'Create a User', offset: 155 }, [
+                    RequirementNode.new({ value: 'Users with names are valid', offset: 226 })
                   ])
                 ])
         output.must_equal nodes
@@ -108,13 +108,13 @@ module ManaMana
                     | PM   | ARRR    |
                     | User | RAAA    |
                EOF
-        nodes = RootNode.new('', [
-                  GroupNode.new('Create a Project', [
-                    RequirementNode.new("Given a user with role <Role>", [
-                      ExamplesNode.new('', [
-                        RowNode.new('', ['Role', 'Remarks']),
-                        RowNode.new('', ['PM', 'ARRR']),
-                        RowNode.new('', ['User', 'RAAA'])
+        nodes = RootNode.new({}, [
+                  GroupNode.new({ value: 'Create a Project', offset: 17 }, [
+                    RequirementNode.new({ value: "Given a user with role <Role>", offset: 92 }, [
+                      ExamplesNode.new({}, [
+                        RowNode.new({ value: ['Role', 'Remarks'], offset: 218 }),
+                        RowNode.new({ value: ['PM', 'ARRR'], offset: 257 }),
+                        RowNode.new({ value: ['User', 'RAAA'], offset: 296 })
                       ])
                     ])
                   ])
@@ -136,16 +136,16 @@ module ManaMana
       
                  * An empty project is invalid
                EOF
-        nodes = RootNode.new('', [
-                  GroupNode.new('Project Management', [
-                    RequirementNode.new("A <Role> in the system <Can or Cannot Create> projects", [
-                      ExamplesNode.new('', [
-                        RowNode.new('', ['Role', 'Can or Cannot Create']),
-                        RowNode.new('', ['PM', 'Can Create']),
-                        RowNode.new('', ['User', 'Cannot Create'])
+        nodes = RootNode.new({}, [
+                  GroupNode.new({ value: 'Project Management', offset: 17 }, [
+                    RequirementNode.new({ value: "A <Role> in the system <Can or Cannot Create> projects", offset: 96 }, [
+                      ExamplesNode.new({}, [
+                        RowNode.new({ value: ['Role', 'Can or Cannot Create'], offset: 181 }),
+                        RowNode.new({ value: ['PM', 'Can Create'], offset: 287 }),
+                        RowNode.new({ value: ['User', 'Cannot Create'], offset: 340 })
                       ])
                     ]),
-                    RequirementNode.new("An empty project is invalid", [])
+                    RequirementNode.new({ value: "An empty project is invalid", offset: 396 }, [])
                   ])
                 ])
         output.must_equal nodes
@@ -169,10 +169,10 @@ module ManaMana
                      * When I uncheck 'Remember Me' and log in successfully,
                        I should be asked to login next time
                  EOF
-        nodes = RootNode.new('', [
-                  GroupNode.new('User Login', [
-                    RequirementNode.new('When I check \'Remember Me\' and log in succesfully, I won\'t have to login again next time'),
-                    RequirementNode.new('When I uncheck \'Remember Me\' and log in successfully, I should be asked to login next time')
+        nodes = RootNode.new({}, [
+                  GroupNode.new({ value: 'User Login', offset: 19 }, [
+                    RequirementNode.new({ value: 'When I check \'Remember Me\' and log in succesfully, I won\'t have to login again next time', offset: 335 }),
+                    RequirementNode.new({ value: 'When I uncheck \'Remember Me\' and log in successfully, I should be asked to login next time', offset: 477 })
                   ])
                 ])
         output.must_equal nodes

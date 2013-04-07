@@ -5,13 +5,26 @@ module ManaMana
     class Node
       attr_reader :children, :name
 
-      def initialize(name='', children=[])
+      def initialize(options={}, children=[])
         @children = children
-        @name     = name
+        @name     = options[:value] || ''
       end
 
       def ==(other_node)
         name == other_node.name && @children == other_node.children
+      end
+    end
+    
+    class NodeWithOffset < Node
+      attr_reader :offset
+      
+      def initialize(options={}, children=[])
+        @offset = options[:offset] || nil
+        super options, children
+      end
+      
+      def ==(other_node)
+        super(other_node) && @offset == other_node.offset
       end
     end
 
@@ -25,7 +38,7 @@ module ManaMana
       end
     end
 
-    class GroupNode < Node
+    class GroupNode < NodeWithOffset
       def all_requirements
         requirements.map{ |r| r.expand }.flatten
       end
@@ -35,12 +48,14 @@ module ManaMana
       end
     end
 
-    class RequirementNode < Node
+    class RequirementNode < NodeWithOffset
       def examples
-        # RowNode.new('', ['Role', 'Can or Cannot Create']),
-        # RowNode.new('', ['PM',   'Can Create'          ]),
-        # RowNode.new('', ['User', 'Cannot Create'       ])
+        # RowNodes initialized this way:
+        # RowNode.new({ value: ['Role', 'Can or Cannot Create'], offset: XX }),
+        # RowNode.new({ value: ['PM',   'Can Create'          ], offset: XX }),
+        # RowNode.new({ value: ['User', 'Cannot Create'       ], offset: XX })
 
+        # ...will be returned by this method this way:
         # [
         #   { '<Role>' => 'PM',   '<Can or Cannot Create>' => 'Can Create'    },
         #   { '<Role>' => 'User', '<Can or Cannot Create>' => 'Cannot Create' }
@@ -86,9 +101,9 @@ module ManaMana
     end
 
 
-    class RowNode < Node
+    class RowNode < NodeWithOffset
       def cells
-        children
+        name
       end
     end
 

@@ -150,77 +150,77 @@ module_eval(<<'.,.,', 'parser.y', 10)
 
 module_eval(<<'.,.,', 'parser.y', 11)
   def _reduce_2(val, _values, result)
-     result = RootNode.new('', val[0]) 
+     result = RootNode.new({}, val[0]) 
     result
   end
 .,.,
 
 module_eval(<<'.,.,', 'parser.y', 15)
   def _reduce_3(val, _values, result)
-     result = [ GroupNode.new(val[0][:value]) ] 
+     result = [ GroupNode.new(val[0]) ] 
     result
   end
 .,.,
 
 module_eval(<<'.,.,', 'parser.y', 16)
   def _reduce_4(val, _values, result)
-     result = [ GroupNode.new(val[0][:value]) ] 
+     result = [ GroupNode.new(val[0]) ] 
     result
   end
 .,.,
 
 module_eval(<<'.,.,', 'parser.y', 17)
   def _reduce_5(val, _values, result)
-     result = [ GroupNode.new(val[0][:value]) ] + val[1] 
+     result = [ GroupNode.new(val[0]) ] + val[1] 
     result
   end
 .,.,
 
 module_eval(<<'.,.,', 'parser.y', 18)
   def _reduce_6(val, _values, result)
-     result = [ GroupNode.new(val[0][:value], val[1]) ] 
+     result = [ GroupNode.new(val[0], val[1]) ] 
     result
   end
 .,.,
 
 module_eval(<<'.,.,', 'parser.y', 19)
   def _reduce_7(val, _values, result)
-     result = [ GroupNode.new(val[0][:value], val[2]) ] 
+     result = [ GroupNode.new(val[0], val[2]) ] 
     result
   end
 .,.,
 
 module_eval(<<'.,.,', 'parser.y', 20)
   def _reduce_8(val, _values, result)
-     result = [ GroupNode.new(val[0][:value], val[1]) ] + val[2] 
+     result = [ GroupNode.new(val[0], val[1]) ] + val[2] 
     result
   end
 .,.,
 
 module_eval(<<'.,.,', 'parser.y', 24)
   def _reduce_9(val, _values, result)
-     result = [ RequirementNode.new(val[0][:value]) ] 
+     result = [ RequirementNode.new(val[0]) ] 
     result
   end
 .,.,
 
 module_eval(<<'.,.,', 'parser.y', 25)
   def _reduce_10(val, _values, result)
-     result = [ RequirementNode.new(val[0][:value]) ] + val[1] 
+     result = [ RequirementNode.new(val[0]) ] + val[1] 
     result
   end
 .,.,
 
 module_eval(<<'.,.,', 'parser.y', 26)
   def _reduce_11(val, _values, result)
-     result = [ RequirementNode.new(val[0][:value], val[1]) ] 
+     result = [ RequirementNode.new(val[0], val[1]) ] 
     result
   end
 .,.,
 
 module_eval(<<'.,.,', 'parser.y', 27)
   def _reduce_12(val, _values, result)
-     result = [ RequirementNode.new(val[0][:value], val[1]) ] + val[2] 
+     result = [ RequirementNode.new(val[0], val[1]) ] + val[2] 
     result
   end
 .,.,
@@ -269,21 +269,21 @@ module_eval(<<'.,.,', 'parser.y', 39)
 
 module_eval(<<'.,.,', 'parser.y', 43)
   def _reduce_19(val, _values, result)
-     result = [ ExamplesNode.new('', val[0]) ] 
+     result = [ ExamplesNode.new({}, val[0]) ] 
     result
   end
 .,.,
 
 module_eval(<<'.,.,', 'parser.y', 47)
   def _reduce_20(val, _values, result)
-     result = [ RowNode.new('', val[1]) ] 
+     result = [ RowNode.new({ value: val[1], offset: val[0][:offset] }) ] 
     result
   end
 .,.,
 
 module_eval(<<'.,.,', 'parser.y', 48)
   def _reduce_21(val, _values, result)
-     result = [ RowNode.new('', val[1]) ] + val[2] 
+     result = [ RowNode.new({ value: val[1], offset: val[0][:offset] }) ] + val[2] 
     result
   end
 .,.,
