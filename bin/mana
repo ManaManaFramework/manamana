@@ -1,7 +1,38 @@
 #!/usr/bin/env ruby
 require 'bundler/setup'
 require 'manamana'
+require 'thor'
 
 include ManaMana
-Compiler.new.start
-Runner.new.start
+
+class ManaManaCLI < Thor
+  
+  desc "exec", "Executes the requirements and associated test cases."
+  def exec
+    Compiler.new.start
+    Runner.new.start
+  end
+  
+  desc "create PROJECT_NAME", "Initializes a ManaMana directory named PROJECT_NAME"
+  def create(project_name)
+    [ 
+      project_name,
+      File.join(project_name, ManaMana::REQUIREMENTS_PATH),
+      File.join(project_name, ManaMana::TEST_CASES_PATH),
+      File.join(project_name, ManaMana::LIB_PATH),
+      File.join(project_name, ManaMana::STEPDEFS_PATH),
+      File.join(project_name, ManaMana::HELPERS_PATH) 
+    ].each do |rel_path|
+      abs_path = File.join(Dir.pwd, rel_path)
+      
+      if Dir.exists? abs_path
+        puts "Exists #{rel_path}"
+      else
+        puts "Create #{rel_path}"
+        Dir.mkdir abs_path
+      end #if
+    end # each
+  end # def
+end # class
+
+ManaManaCLI.start(ARGV)

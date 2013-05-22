@@ -16,4 +16,5 @@ Gem::Specification.new do |gem|
   gem.version       = ManaMana::VERSION
   
   gem.add_dependency 'racc', '1.4.9'
+  gem.add_dependency 'thor', '~> 0.18.0'
 end
