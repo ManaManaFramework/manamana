@@ -2,9 +2,10 @@ module ManaMana
 
   class Compiler
     def start(options = {})
-      options[:requirements_path] = File.join(Dir.pwd, 'requirements')
-      options[:test_cases_path]   = File.join(Dir.pwd, 'test_cases')
-      options[:utilities_path]    = File.join(Dir.pwd, 'utilities')
+      options[:requirements_path] = File.join(Dir.pwd, ManaMana::REQUIREMENTS_PATH)
+      options[:test_cases_path]   = File.join(Dir.pwd, ManaMana::TEST_CASES_PATH)
+      options[:stepdefs_path]     = File.join(Dir.pwd, ManaMana::STEPDEFS_PATH)
+      options[:helpers_path]      = File.join(Dir.pwd, ManaMana::HELPERS_PATH)
       options[:output_path]       = File.join(Dir.pwd, '__spec__.rb')
       @options = options
 

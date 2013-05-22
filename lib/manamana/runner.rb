@@ -9,7 +9,7 @@ module ManaMana
 
         if File.directory?(path)
           recursive_require(path)
-        else
+        elsif File.extname(path) == '.rb'
           require path
         end
       end
@@ -18,7 +18,7 @@ module ManaMana
     def start
       require 'minitest/autorun'
 
-      recursive_require File.join(Dir.pwd, 'utilities')
+      recursive_require File.join(Dir.pwd, LIB_PATH)
       require File.join(Dir.pwd, '__spec__.rb')
     end
   end
