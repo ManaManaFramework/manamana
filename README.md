@@ -117,10 +117,10 @@ end
 
 **Step 4: Run it!**
 
-Run `mana start` to execute the tests and validate the requirements:
+Run `mana exec` to execute the tests and validate the requirements:
 
 ```
-$ mana start
+$ mana exec
 Run options: --seed 51346
 
 ## Running tests
