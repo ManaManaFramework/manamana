@@ -1,5 +1,10 @@
 # ManaMana Framework
 
+[![Build Status](https://travis-ci.org/ManaManaFramework/manamana.png)](https://travis-ci.org/ManaManaFramework/manamana)
+
+[![Coverage Status](https://coveralls.io/repos/ManaManaFramework/manamana/badge.png)](https://coveralls.io/r/ManaManaFramework/manamana)
+
+
 Organize your project's requirements and their associated test cases in a way that makes sense to your organization. Then keep track of the status of each as your project progresses.
 
 ## Installation
