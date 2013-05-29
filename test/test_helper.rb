@@ -3,6 +3,7 @@ $:.unshift File.expand_path("../../lib", __FILE__)
 
 require 'coveralls'
 Coveralls.wear!
+SimpleCov.command_name 'Unit Tests'
 
 require "bundler/setup"
 require "minitest/autorun"
