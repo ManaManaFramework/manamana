@@ -26,7 +26,7 @@ This will create a directory named `my_project` containing the following items:
 
 **Step 1: Write Requirements**
 
-Writes a requirements file using the Requirements Syntax and save it under the `requirements/` directory. For example:
+Write a requirements file using the Requirements Syntax and save it under the `requirements/` directory. For example:
 
 ```
 Create Tickets
@@ -99,7 +99,7 @@ Notes:
 
 **Step 3: Define re-usable steps**
 
-Writes the equivalent Ruby code for the steps used in the test cases. For example:
+Write the equivalent Ruby code for the steps used in the test cases. For example:
 
 ```
 step /^Visit the (.+) page$/i do |page_name|
