@@ -1,0 +1,9 @@
+Test Case:
+  It tokenizes ```([\w\W]+)``` into (.+)
+
+  Variables:
+    * Code Block = $1
+    * Tokens     = $2
+
+  Script:
+    * Tokenized <Code Block> must equal <Tokens>
