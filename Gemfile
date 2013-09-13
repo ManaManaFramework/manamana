@@ -14,8 +14,10 @@ group :development do
   gem "guard"
   gem "guard-rake"
   gem "guard-minitest"
+  gem "guard-process"
   gem 'ruby_gntp'
   gem "racc"
   gem "debugger"
   gem "pry"
+  gem 'json', '~> 1.7.7'
 end
