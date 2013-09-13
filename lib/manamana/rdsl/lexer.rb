@@ -34,9 +34,10 @@ class << self
 end
 self._lexer_key_offsets = [
 	0, 0, 15, 28, 42, 54, 56, 57, 
-	58, 59, 60, 61, 62, 63, 70, 81, 
-	90, 91, 93, 94, 95, 98, 112, 117, 
-	121, 125, 127, 128, 133, 137, 141, 143
+	58, 59, 60, 61, 62, 63, 70, 85, 
+	98, 99, 100, 101, 103, 104, 105, 108, 
+	122, 127, 131, 135, 137, 138, 143, 147, 
+	151, 154, 156
 ]
 
 class << self
@@ -44,25 +45,26 @@ class << self
 	private :_lexer_trans_keys, :_lexer_trans_keys=
 end
 self._lexer_trans_keys = [
-	9, 10, 13, 32, 61, 93, 125, 40, 
-	41, 48, 57, 65, 91, 97, 123, 9, 
-	32, 61, 93, 125, 40, 41, 48, 57, 
-	65, 91, 97, 123, 9, 10, 13, 32, 
-	93, 125, 40, 41, 48, 57, 65, 91, 
-	97, 123, 9, 32, 93, 125, 40, 41, 
-	48, 57, 65, 91, 97, 123, 10, 13, 
+	9, 10, 13, 32, 60, 61, 125, 40, 
+	41, 48, 57, 65, 93, 96, 123, 9, 
+	32, 60, 61, 125, 40, 41, 48, 57, 
+	65, 93, 96, 123, 9, 10, 13, 32, 
+	60, 125, 40, 41, 48, 57, 65, 93, 
+	96, 123, 9, 32, 60, 125, 40, 41, 
+	48, 57, 65, 93, 96, 123, 10, 13, 
 	10, 10, 10, 61, 61, 10, 32, 60, 
 	48, 57, 65, 90, 97, 122, 9, 10, 
-	13, 32, 60, 48, 57, 65, 90, 97, 
-	122, 9, 32, 60, 48, 57, 65, 90, 
-	97, 122, 10, 10, 13, 10, 10, 124, 
-	32, 126, 32, 42, 93, 124, 9, 13, 
-	40, 41, 48, 57, 65, 91, 97, 125, 
-	9, 10, 13, 32, 126, 9, 10, 13, 
-	32, 10, 13, 32, 126, 10, 13, 61, 
-	9, 10, 13, 32, 126, 9, 10, 13, 
-	32, 10, 13, 32, 126, 10, 13, 124, 
-	32, 126, 0
+	13, 32, 60, 61, 125, 40, 41, 48, 
+	57, 65, 93, 96, 123, 9, 32, 60, 
+	61, 125, 40, 41, 48, 57, 65, 93, 
+	96, 123, 10, 61, 61, 10, 13, 10, 
+	10, 124, 32, 126, 32, 42, 60, 124, 
+	9, 13, 40, 41, 48, 57, 65, 93, 
+	96, 125, 9, 10, 13, 32, 126, 9, 
+	10, 13, 32, 10, 13, 32, 126, 10, 
+	13, 61, 9, 10, 13, 32, 126, 9, 
+	10, 13, 32, 10, 13, 32, 126, 10, 
+	13, 61, 10, 13, 124, 32, 126, 0
 ]
 
 class << self
@@ -71,9 +73,10 @@ class << self
 end
 self._lexer_single_lengths = [
 	0, 7, 5, 6, 4, 2, 1, 1, 
-	1, 1, 1, 1, 1, 1, 5, 3, 
-	1, 2, 1, 1, 1, 4, 3, 4, 
-	2, 2, 1, 3, 4, 2, 2, 1
+	1, 1, 1, 1, 1, 1, 7, 5, 
+	1, 1, 1, 2, 1, 1, 1, 4, 
+	3, 4, 2, 2, 1, 3, 4, 2, 
+	3, 2, 1
 ]
 
 class << self
@@ -82,9 +85,10 @@ class << self
 end
 self._lexer_range_lengths = [
 	0, 4, 4, 4, 4, 0, 0, 0, 
-	0, 0, 0, 0, 0, 3, 3, 3, 
-	0, 0, 0, 0, 1, 5, 1, 0, 
-	1, 0, 0, 1, 0, 1, 0, 1
+	0, 0, 0, 0, 0, 3, 4, 4, 
+	0, 0, 0, 0, 0, 0, 1, 5, 
+	1, 0, 1, 0, 0, 1, 0, 1, 
+	0, 0, 1
 ]
 
 class << self
@@ -93,9 +97,10 @@ class << self
 end
 self._lexer_index_offsets = [
 	0, 0, 12, 22, 33, 42, 45, 47, 
-	49, 51, 53, 55, 57, 59, 64, 73, 
-	80, 82, 85, 87, 89, 92, 102, 107, 
-	112, 116, 119, 121, 126, 131, 135, 138
+	49, 51, 53, 55, 57, 59, 64, 76, 
+	86, 88, 90, 92, 95, 97, 99, 102, 
+	112, 117, 122, 126, 129, 131, 136, 141, 
+	145, 149, 152
 ]
 
 class << self
@@ -103,24 +108,26 @@ class << self
 	private :_lexer_indicies, :_lexer_indicies=
 end
 self._lexer_indicies = [
-	1, 2, 3, 1, 5, 4, 4, 4, 
-	4, 4, 4, 0, 1, 1, 5, 4, 
+	1, 2, 3, 1, 4, 5, 4, 4, 
+	4, 4, 4, 0, 1, 1, 4, 5, 
 	4, 4, 4, 4, 4, 0, 6, 2, 
 	3, 6, 4, 4, 4, 4, 4, 4, 
 	0, 6, 6, 4, 4, 4, 4, 4, 
 	4, 0, 2, 3, 0, 2, 0, 7, 
 	0, 8, 0, 9, 0, 10, 0, 11, 
 	0, 12, 13, 14, 14, 14, 14, 13, 
-	16, 17, 18, 16, 19, 19, 19, 19, 
-	15, 16, 16, 19, 19, 19, 19, 15, 
-	20, 15, 17, 18, 15, 17, 15, 21, 
-	15, 24, 23, 22, 25, 27, 26, 23, 
-	25, 26, 26, 26, 26, 13, 29, 11, 
-	30, 26, 28, 29, 11, 30, 29, 28, 
-	8, 31, 4, 28, 7, 32, 28, 10, 
-	33, 35, 20, 36, 14, 34, 35, 20, 
-	36, 35, 34, 20, 36, 19, 34, 21, 
-	37, 34, 24, 23, 38, 0
+	16, 17, 18, 16, 19, 20, 19, 19, 
+	19, 19, 19, 15, 16, 16, 19, 20, 
+	19, 19, 19, 19, 19, 15, 21, 15, 
+	22, 15, 23, 15, 17, 18, 15, 17, 
+	15, 24, 15, 27, 26, 25, 28, 30, 
+	29, 26, 28, 29, 29, 29, 29, 13, 
+	32, 11, 33, 29, 31, 32, 11, 33, 
+	32, 31, 8, 34, 4, 31, 7, 35, 
+	31, 10, 36, 38, 21, 39, 14, 37, 
+	38, 21, 39, 38, 37, 21, 39, 19, 
+	37, 21, 39, 23, 37, 24, 40, 37, 
+	27, 26, 41, 0
 ]
 
 class << self
@@ -128,11 +135,12 @@ class << self
 	private :_lexer_trans_targs, :_lexer_trans_targs=
 end
 self._lexer_trans_targs = [
-	21, 2, 25, 6, 24, 9, 4, 5, 
-	3, 10, 26, 1, 13, 0, 27, 21, 
-	15, 30, 18, 29, 14, 17, 21, 20, 
-	31, 21, 22, 12, 21, 23, 11, 8, 
-	7, 21, 21, 28, 16, 19, 21
+	23, 2, 27, 6, 26, 9, 4, 5, 
+	3, 10, 28, 1, 13, 0, 29, 23, 
+	15, 33, 20, 31, 17, 14, 18, 32, 
+	19, 23, 22, 34, 23, 24, 12, 23, 
+	25, 11, 8, 7, 23, 23, 30, 16, 
+	21, 23
 ]
 
 class << self
@@ -142,9 +150,10 @@ end
 self._lexer_trans_actions = [
 	17, 0, 3, 0, 3, 0, 0, 0, 
 	0, 0, 0, 0, 0, 0, 3, 15, 
-	0, 3, 0, 3, 0, 0, 19, 0, 
-	24, 5, 3, 0, 13, 3, 0, 0, 
-	0, 7, 9, 3, 0, 0, 11
+	0, 3, 0, 3, 0, 0, 0, 3, 
+	0, 19, 0, 24, 5, 3, 0, 13, 
+	3, 0, 0, 0, 7, 9, 3, 0, 
+	0, 11
 ]
 
 class << self
@@ -154,8 +163,9 @@ end
 self._lexer_to_state_actions = [
 	0, 0, 0, 0, 0, 0, 0, 0, 
 	0, 0, 0, 0, 0, 0, 0, 0, 
-	0, 0, 0, 0, 0, 21, 0, 0, 
-	0, 0, 0, 0, 0, 0, 0, 0
+	0, 0, 0, 0, 0, 0, 0, 21, 
+	0, 0, 0, 0, 0, 0, 0, 0, 
+	0, 0, 0
 ]
 
 class << self
@@ -165,8 +175,9 @@ end
 self._lexer_from_state_actions = [
 	0, 0, 0, 0, 0, 0, 0, 0, 
 	0, 0, 0, 0, 0, 0, 0, 0, 
-	0, 0, 0, 0, 0, 1, 0, 0, 
-	0, 0, 0, 0, 0, 0, 0, 0
+	0, 0, 0, 0, 0, 0, 0, 1, 
+	0, 0, 0, 0, 0, 0, 0, 0, 
+	0, 0, 0
 ]
 
 class << self
@@ -176,18 +187,19 @@ end
 self._lexer_eof_trans = [
 	0, 1, 1, 1, 1, 1, 1, 1, 
 	1, 1, 1, 1, 0, 0, 16, 16, 
-	16, 16, 16, 16, 23, 0, 29, 29, 
-	29, 29, 34, 35, 35, 35, 35, 39
+	16, 16, 16, 16, 16, 16, 26, 0, 
+	32, 32, 32, 32, 37, 38, 38, 38, 
+	38, 38, 42
 ]
 
 class << self
 	attr_accessor :lexer_start
 end
-self.lexer_start = 21;
+self.lexer_start = 23;
 class << self
 	attr_accessor :lexer_first_final
 end
-self.lexer_first_final = 21;
+self.lexer_first_final = 23;
 class << self
 	attr_accessor :lexer_error
 end
@@ -196,7 +208,7 @@ self.lexer_error = 0;
 class << self
 	attr_accessor :lexer_en_main
 end
-self.lexer_en_main = 21;
+self.lexer_en_main = 23;
 
 
 # line 41 "src/rdsl/lexer.rl"
@@ -221,7 +233,20 @@ self.lexer_en_main = 21;
       end
 
       def emit_requirement(token_array, data, ts, te)
-        value = data[ts...te].pack("c*").gsub(/^\* /, '').split.join(' ')
+        # Split the string by code block delimiters. Even elements will be
+        # non code blocks. Odd elements will be code blocks
+        str_arr = data[ts...te].pack("c*").gsub(/^\* /, '').split('```')
+                
+        value = ''
+                
+        # Iterate through blocks and non code blocks, copying code blocks verbatim
+        # and stripping non-codeblocks
+        str_arr.each_with_index do |str, i|
+          value << (i.odd? ? " ```#{str.rstrip}``` " : str.split.join(' '))
+        end
+                  
+        value.strip!
+                  
         token_array << [:REQUIREMENT, { value: value, offset: ts }]
       end
 
@@ -236,7 +261,7 @@ self.lexer_en_main = 21;
         token_array = []
 
         
-# line 240 "lib/manamana/rdsl/lexer.rb"
+# line 265 "lib/manamana/rdsl/lexer.rb"
 begin
 	p ||= 0
 	pe ||= data.length
@@ -246,9 +271,9 @@ begin
 	act = 0
 end
 
-# line 77 "src/rdsl/lexer.rl"
+# line 90 "src/rdsl/lexer.rl"
         
-# line 252 "lib/manamana/rdsl/lexer.rb"
+# line 277 "lib/manamana/rdsl/lexer.rb"
 begin
 	_klen, _trans, _keys, _acts, _nacts = nil
 	_goto_level = 0
@@ -282,7 +307,7 @@ begin
 		begin
 ts = p
 		end
-# line 286 "lib/manamana/rdsl/lexer.rb"
+# line 311 "lib/manamana/rdsl/lexer.rb"
 		end # from state action switch
 	end
 	if _trigger_goto
@@ -416,7 +441,7 @@ end
  emit_row(data, token_array, ts, te) end
 end 
 			end
-# line 420 "lib/manamana/rdsl/lexer.rb"
+# line 445 "lib/manamana/rdsl/lexer.rb"
 			end # action switch
 		end
 	end
@@ -441,7 +466,7 @@ when 1 then
 		begin
 act = 0
 		end
-# line 445 "lib/manamana/rdsl/lexer.rb"
+# line 470 "lib/manamana/rdsl/lexer.rb"
 		end # to state action switch
 	end
 	if _trigger_goto
@@ -472,7 +497,7 @@ end
 	end
 	end
 
-# line 78 "src/rdsl/lexer.rl"
+# line 91 "src/rdsl/lexer.rl"
 
         token_array
       end
