@@ -11,9 +11,9 @@ module ManaMana
         node = TestCaseNode.new 'A new user with attributes (.+), (.+) is valid'
         req  = "A new user with attributes Bob, 123qwe is valid"
         spec = <<-EOF
-  describe 'A new user with attributes Bob, 123qwe is valid' do
+  describe %Q%A new user with attributes Bob, 123qwe is valid% do
     before do
-      /^A new user with attributes (.+), (.+) is valid$/i =~ "A new user with attributes Bob, 123qwe is valid"
+      /^A new user with attributes (.+), (.+) is valid$/i =~ %Q%A new user with attributes Bob, 123qwe is valid%
     end
 
     after do
@@ -39,9 +39,9 @@ EOF
                })
         req  = "A new user with attributes Bob, 123qwe is valid"
         spec = <<-EOF
-  describe 'A new user with attributes Bob, 123qwe is valid' do
+  describe %Q%A new user with attributes Bob, 123qwe is valid% do
     before do
-      /^A new user with attributes (.+), (.+) is valid$/i =~ "A new user with attributes Bob, 123qwe is valid"
+      /^A new user with attributes (.+), (.+) is valid$/i =~ %Q%A new user with attributes Bob, 123qwe is valid%
       Steps.call "Ensure user with attributes " + my_username + ", " + my_password + " exists"
     end
 
@@ -68,9 +68,9 @@ EOF
                })
         req  = "A new user with attributes Bob, 123qwe is valid"
         spec = <<-EOF
-  describe 'A new user with attributes Bob, 123qwe is valid' do
+  describe %Q%A new user with attributes Bob, 123qwe is valid% do
     before do
-      /^A new user with attributes (.+), (.+) is valid$/i =~ "A new user with attributes Bob, 123qwe is valid"
+      /^A new user with attributes (.+), (.+) is valid$/i =~ %Q%A new user with attributes Bob, 123qwe is valid%
     end
 
     after do
@@ -98,9 +98,9 @@ EOF
                })
         req  = "A new user with attributes Bob, 123qwe is valid"
         spec = <<-EOF
-  describe 'A new user with attributes Bob, 123qwe is valid' do
+  describe %Q%A new user with attributes Bob, 123qwe is valid% do
     before do
-      /^A new user with attributes (.+), (.+) is valid$/i =~ "A new user with attributes Bob, 123qwe is valid"
+      /^A new user with attributes (.+), (.+) is valid$/i =~ %Q%A new user with attributes Bob, 123qwe is valid%
     end
 
     after do

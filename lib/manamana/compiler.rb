@@ -15,7 +15,7 @@ module ManaMana
       output = ""
 
       req_groups.each do |group|
-        output << "describe \"#{ group.name }\" do\n\n"
+        output << "describe %Q%#{ group.name }% do\n\n"
 
         group.all_requirements.each do |r|
           output << test_cases.find(r).translate(r) + "\n"
