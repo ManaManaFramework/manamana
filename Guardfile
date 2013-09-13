@@ -25,3 +25,7 @@ end
 guard 'rake', :task => 'tdsl:compile_parser' do
   watch %r{^src/tdsl/parser\.y$}
 end
+
+guard 'process', :name => 'ManaMana', :dir => 'mana', :command => 'mana exec' do
+  watch(%r{^mana/(requirements|test_cases)/.+\.(rdsl|tdsl)})
+end
