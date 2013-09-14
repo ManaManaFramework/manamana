@@ -57,7 +57,7 @@ module ManaMana
         children[:cleanup]       = children.delete(:cleanup) || CleanupNode.new
         children[:script]        = children.delete(:script) || ScriptNode.new
 
-        @regex = Regexp.new("^#{name}$", Regexp::IGNORECASE)
+        @regex = Regexp.new("^#{name}$", Regexp::IGNORECASE | Regexp::MULTILINE)
 
         super name, children
       end

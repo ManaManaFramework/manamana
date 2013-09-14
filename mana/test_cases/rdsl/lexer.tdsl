@@ -1,5 +1,5 @@
 Test Case:
-  It tokenizes ```([\w\W]+)``` into ```([\w\W]+)```
+  It tokenizes ```(.+)``` into ```(.+)```
 
   Variables:
     * Source = $1
