@@ -2,7 +2,7 @@
 $:.unshift File.expand_path("../../../../lib", __FILE__)
 require 'manamana/rdsl/lexer'
 
-step /^Tokenized ([\w\W]+) must equal (.+)$/ do |code_block, tokens_str|
+step /^Tokenized ([\w\W]+) must equal ([\w\W]+)$/ do |code_block, tokens_str|
 
   output = ManaMana::RDSL::Lexer.new.tokenize(code_block)
   tokens = eval tokens_str

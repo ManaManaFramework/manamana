@@ -1,5 +1,5 @@
 Test Case:
-  It tokenizes ```([\w\W]+)``` into (.+)
+  It tokenizes ```([\w\W]+)``` into ```([\w\W]+)```
 
   Variables:
     * Code Block = $1
