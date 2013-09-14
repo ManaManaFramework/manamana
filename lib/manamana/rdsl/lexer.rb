@@ -238,11 +238,14 @@ self.lexer_en_main = 23;
         str_arr = data[ts...te].pack("c*").gsub(/^\* /, '').split('```')
                 
         value = ''
-                
+        
+        reserved_chars = /(\[|\])/
+        
+        
         # Iterate through blocks and non code blocks, copying code blocks verbatim
-        # and stripping non-codeblocks
+        # and stripping non-codeblocks        
         str_arr.each_with_index do |str, i|
-          value << (i.odd? ? " ```#{str.rstrip}``` " : str.split.join(' '))
+          value << (i.odd? ? " ```#{str.rstrip.gsub(reserved_chars){|m| '\\' + m }}``` " : str.split.join(' '))
         end
                   
         value.strip!
@@ -261,7 +264,7 @@ self.lexer_en_main = 23;
         token_array = []
 
         
-# line 265 "lib/manamana/rdsl/lexer.rb"
+# line 268 "lib/manamana/rdsl/lexer.rb"
 begin
 	p ||= 0
 	pe ||= data.length
@@ -271,9 +274,9 @@ begin
 	act = 0
 end
 
-# line 90 "src/rdsl/lexer.rl"
+# line 93 "src/rdsl/lexer.rl"
         
-# line 277 "lib/manamana/rdsl/lexer.rb"
+# line 280 "lib/manamana/rdsl/lexer.rb"
 begin
 	_klen, _trans, _keys, _acts, _nacts = nil
 	_goto_level = 0
@@ -307,7 +310,7 @@ begin
 		begin
 ts = p
 		end
-# line 311 "lib/manamana/rdsl/lexer.rb"
+# line 314 "lib/manamana/rdsl/lexer.rb"
 		end # from state action switch
 	end
 	if _trigger_goto
@@ -441,7 +444,7 @@ end
  emit_row(data, token_array, ts, te) end
 end 
 			end
-# line 445 "lib/manamana/rdsl/lexer.rb"
+# line 448 "lib/manamana/rdsl/lexer.rb"
 			end # action switch
 		end
 	end
@@ -466,7 +469,7 @@ when 1 then
 		begin
 act = 0
 		end
-# line 470 "lib/manamana/rdsl/lexer.rb"
+# line 473 "lib/manamana/rdsl/lexer.rb"
 		end # to state action switch
 	end
 	if _trigger_goto
@@ -497,7 +500,7 @@ end
 	end
 	end
 
-# line 91 "src/rdsl/lexer.rl"
+# line 94 "src/rdsl/lexer.rl"
 
         token_array
       end

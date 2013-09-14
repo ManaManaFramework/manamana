@@ -184,15 +184,17 @@ module ManaMana
       it "must not interpret RDSL inside of code blocks" do
         output = tokenize <<-EOF
                    * It tokenizes
-                       ```
+                     ```
                        This is a group name
                        ====================
-                       ```
+                     ```
                      into
+                     ```
                        [[:GROUP, 'This is a group name']]
+                     ```
                  EOF
          tokens = [
-                    [:REQUIREMENT, { value: "It tokenizes ```\n                       This is a group name\n                       ====================``` into [[:GROUP, 'This is a group name']]", offset: 19 } ]
+                    [:REQUIREMENT, { value: "It tokenizes ```\n                       This is a group name\n                       ====================``` into ```\n                       \\[\\[:GROUP, 'This is a group name'\\]\\]```", offset: 19 } ]
                   ]
          output.must_equal tokens
       end

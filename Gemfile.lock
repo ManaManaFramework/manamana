@@ -88,6 +88,6 @@ DEPENDENCIES
   minitest
   minitest-colorize!
   pry
-  racc
+  rake
   rb-fsevent (~> 0.9)
   ruby_gntp

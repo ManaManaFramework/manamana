@@ -64,11 +64,14 @@ module ManaMana
         str_arr = data[ts...te].pack("c*").gsub(/^\* /, '').split('```')
                 
         value = ''
-                
+        
+        reserved_chars = /(\[|\])/
+        
+        
         # Iterate through blocks and non code blocks, copying code blocks verbatim
-        # and stripping non-codeblocks
+        # and stripping non-codeblocks        
         str_arr.each_with_index do |str, i|
-          value << (i.odd? ? " ```#{str.rstrip}``` " : str.split.join(' '))
+          value << (i.odd? ? " ```#{str.rstrip.gsub(reserved_chars){|m| '\\' + m }}``` " : str.split.join(' '))
         end
                   
         value.strip!
