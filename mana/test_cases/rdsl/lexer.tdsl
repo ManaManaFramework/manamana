@@ -1,9 +1,0 @@
-Test Case:
-  It tokenizes ```(.+)``` into ```(.+)```
-
-  Variables:
-    * Source = $1
-    * Tokens = $2
-
-  Script:
-    * Tokenized <Source> must equal <Tokens>

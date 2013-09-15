@@ -2,8 +2,8 @@
 
 [![Code Climate](https://codeclimate.com/github/ManaManaFramework/manamana.png)](https://codeclimate.com/github/ManaManaFramework/manamana) [![Build Status](https://travis-ci.org/ManaManaFramework/manamana.png)](https://travis-ci.org/ManaManaFramework/manamana) [![Coverage Status](https://coveralls.io/repos/ManaManaFramework/manamana/badge.png)](https://coveralls.io/r/ManaManaFramework/manamana)
 
+ManaMana (do doo be-do-do!) is a **user acceptance testing** framework for web applications. Capture customer requirements and then execute them against your web app for instant gratification and profit!
 
-Organize your project's requirements and their associated test cases in a way that makes sense to your organization. Then keep track of the status of each as your project progresses.
 
 ## Installation
 
