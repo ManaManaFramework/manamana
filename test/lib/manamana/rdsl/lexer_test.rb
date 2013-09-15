@@ -165,6 +165,40 @@ module ManaMana
                  ]
         output.must_equal tokens
       end
+      
+      it "must preserve whitespace in code blocks" do
+        output = tokenize <<-EOF
+                   * Here is a requirement with code block
+                     ```
+                       line 1
+                       line 2
+                     ```
+                     that continues to this line
+                 EOF
+        tokens = [
+                   [:REQUIREMENT, { value: "Here is a requirement with code block ```\n                       line 1\n                       line 2``` that continues to this line", offset: 19 } ]
+                 ]
+        output.must_equal tokens
+      end
+
+      it "must not interpret RDSL inside of code blocks" do
+        output = tokenize <<-EOF
+                   * It tokenizes
+                     ```
+                       This is a group name
+                       ====================
+                     ```
+                     into
+                     ```
+                       [[:GROUP, 'This is a group name']]
+                     ```
+                 EOF
+         tokens = [
+                    [:REQUIREMENT, { value: "It tokenizes ```\n                       This is a group name\n                       ====================``` into ```\n                       \\[\\[:GROUP, 'This is a group name'\\]\\]```", offset: 19 } ]
+                  ]
+         output.must_equal tokens
+      end
+
 
       def tokenize(data)
         Lexer.new.tokenize(data)

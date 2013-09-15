@@ -31,6 +31,7 @@ GEM
       debugger-ruby_core_source (~> 1.2.0)
     debugger-linecache (1.2.0)
     debugger-ruby_core_source (1.2.0)
+    ffi (1.9.0)
     guard (1.6.2)
       listen (>= 0.6.0)
       lumberjack (>= 1.0.2)
@@ -39,9 +40,13 @@ GEM
       thor (>= 0.14.6)
     guard-minitest (0.5.0)
       guard (>= 0.4)
+    guard-process (1.0.6)
+      guard (>= 0.4.2)
+      spoon (~> 0.0.1)
     guard-rake (0.0.7)
       guard
       rake
+    json (1.7.7)
     listen (0.7.3)
     lumberjack (1.0.2)
     method_source (0.8.1)
@@ -63,6 +68,8 @@ GEM
       simplecov-html (~> 0.7.1)
     simplecov-html (0.7.1)
     slop (3.4.3)
+    spoon (0.0.4)
+      ffi
     terminal-table (1.4.5)
     thor (0.18.1)
 
@@ -74,11 +81,13 @@ DEPENDENCIES
   debugger
   guard
   guard-minitest
+  guard-process
   guard-rake
+  json (~> 1.7.7)
   manamana!
   minitest
   minitest-colorize!
   pry
-  racc
+  rake
   rb-fsevent (~> 0.9)
   ruby_gntp

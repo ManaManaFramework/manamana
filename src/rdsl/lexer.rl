@@ -8,14 +8,14 @@
 
   newline       = ('\n' | '\r\n');
   tab_or_space  = [\t ];
-  string        = [A-Za-z0-9\(\)\[\]\{\}] print*;
+  string        = [A-Za-z0-9\(\)\[\]\{\}`<\\] print*;
   req_string    = [A-Za-z0-9<] print*;
   underline     = '===' '='*;
   pipe          = '|';
 
   group_name  = string tab_or_space* newline tab_or_space* underline;
   text        = string tab_or_space* (newline tab_or_space* string)* (newline newline)*;
-  requirement = '* ' req_string tab_or_space* (newline tab_or_space* req_string)* (newline newline)*;
+  requirement = '* ' req_string tab_or_space* (newline tab_or_space* (string|underline))* (newline newline)*;
   table_row   = pipe print* pipe;
 
   main := |*
@@ -59,7 +59,23 @@ module ManaMana
       end
 
       def emit_requirement(token_array, data, ts, te)
-        value = data[ts...te].pack("c*").gsub(/^\* /, '').split.join(' ')
+        # Split the string by code block delimiters. Even elements will be
+        # non code blocks. Odd elements will be code blocks
+        str_arr = data[ts...te].pack("c*").gsub(/^\* /, '').split('```')
+                
+        value = ''
+        
+        reserved_chars = /(\[|\])/
+        
+        
+        # Iterate through blocks and non code blocks, copying code blocks verbatim
+        # and stripping non-codeblocks        
+        str_arr.each_with_index do |str, i|
+          value << (i.odd? ? " ```#{str.rstrip.gsub(reserved_chars){|m| '\\' + m }}``` " : str.split.join(' '))
+        end
+                  
+        value.strip!
+                  
         token_array << [:REQUIREMENT, { value: value, offset: ts }]
       end
 

@@ -43,7 +43,7 @@ module ManaMana
 
 
   def step(pattern, &block)
-    Steps.add pattern, &block
+    Steps.add Regexp.new(pattern.source, Regexp::IGNORECASE | Regexp::MULTILINE), &block
   end
 
 end

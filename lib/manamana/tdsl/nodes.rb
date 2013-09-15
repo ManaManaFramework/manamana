@@ -57,7 +57,7 @@ module ManaMana
         children[:cleanup]       = children.delete(:cleanup) || CleanupNode.new
         children[:script]        = children.delete(:script) || ScriptNode.new
 
-        @regex = Regexp.new("^#{name}$", Regexp::IGNORECASE)
+        @regex = Regexp.new("^#{name}$", Regexp::IGNORECASE | Regexp::MULTILINE)
 
         super name, children
       end
@@ -77,11 +77,11 @@ module ManaMana
 
       def translate(requirement)
         spec = ""
-        spec << "  describe '#{ requirement }' do\n"
+        spec << "  describe %Q%#{ requirement }% do\n"
         spec << "    before do\n"
 
         # Make the $1, $2, etc variables available to this spec
-        spec << "      #{ regex.inspect } =~ \"#{ requirement }\"\n"
+        spec << "      #{ regex.inspect } =~ %Q%#{ requirement }%\n"
 
         preconditions.each do |step|
           str = step.name.dup
